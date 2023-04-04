@@ -1,0 +1,61 @@
+.box {
+    text-align: center;
+    height: 10vw;
+    width: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mark {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: antiquewhite;
+    font-size: 6vw;
+    font-weight: 900;
+    height: 10vw;
+    width: 10vw;
+    margin: 0;
+}
+
+@media screen and (max-width:580px) {
+    .box {
+        text-align: center;
+        height: 30vw;
+        width: 30vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mark {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: antiquewhite;
+        font-size: 18vw;
+        font-weight: 900;
+        height: 30vw;
+        width: 30vw;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width:580) and (max-width:1080px) {
+    .box {
+        text-align: center;
+        height: 20vw;
+        width: 20vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .mark {
+        background-color: rgba(0, 0, 0, 0.2);
+        color: antiquewhite;
+        font-size: 12vw;
+        font-weight: 900;
+        height: 20vw;
+        width: 20vw;
+        margin: 0;
+    }
+
+}
