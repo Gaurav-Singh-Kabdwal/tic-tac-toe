@@ -29,7 +29,7 @@
 
     .mark {
         background-color: rgba(0, 0, 0, 0.2);
-        color: antiquewhite;
+        color: #111111;
         font-size: 18vw;
         font-weight: 900;
         height: 30vw;
@@ -50,7 +50,7 @@
 
     .mark {
         background-color: rgba(0, 0, 0, 0.2);
-        color: antiquewhite;
+        color: #111111;
         font-size: 12vw;
         font-weight: 900;
         height: 20vw;
