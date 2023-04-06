@@ -50,7 +50,7 @@ function App() {
         setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
       }
     }
-    else if (((d === e) && (e === f)) || ((b === e) && (e === h)) || ((c===e) && (c===g))) {
+    else if (((d === e) && (e === f)) || (((b === e) && (e === h)) || ((c===e) && (c===g)))) {
       if (e !== "") {
         setWinner("Winner : " + e);
         setGameOver(true);
