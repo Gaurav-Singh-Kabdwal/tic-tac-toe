@@ -12,13 +12,13 @@ function App() {
 
   function click(id) {
 
-    const { a, b, c, d, e, f, g, h, i } = {...moves,[id]:(toggle ? "O" : "X")};
+    const { a, b, c, d, e, f, g, h, i } = { ...moves, [id]: (toggle ? "O" : "X") };
 
     if (moves[id] === "") {
 
       setMoves((prevMoves) => {
         const mark = toggle ? "O" : "X";
-        return {...prevMoves,[id]:mark};
+        return { ...prevMoves, [id]: mark };
       });
 
 
@@ -29,7 +29,7 @@ function App() {
         return !prevToggle;
       });
 
-      if(count>=9){
+      if (count >= 9) {
         setWinner("Its a Draw.");
         setGameOver(true);
         setCount(1);
@@ -38,22 +38,22 @@ function App() {
     }
 
     if ((a !== "") && (((a === b) && (b === c)) || (((a === d) && (d === g))))) {
-        setWinner("Winner : " + a);
-        setGameOver(true);
-        setCount(1);
-        setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
+      setWinner("Winner : " + a);
+      setGameOver(true);
+      setCount(1);
+      setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
     }
-    else if ((e !== "")&&((((d === e) && (e === f))  || ((a === e) && (e === i))) || (((b === e) && ( h === e)) || ((c===e) && (c===g))))) {
-        setWinner("Winner : " + e);
-        setGameOver(true);
-        setCount(1);
-        setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
+    else if ((e !== "") && ((((d === e) && (e === f)) || ((a === e) && (e === i))) || (((b === e) && (h === e)) || ((c === e) && (c === g))))) {
+      setWinner("Winner : " + e);
+      setGameOver(true);
+      setCount(1);
+      setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
     }
     else if ((i !== "") && (((g === h) && (h === i)) || ((c === f) && (f === i)))) {
-        setWinner("Winner : " + i);
-        setGameOver(true);
-        setCount(1);
-        setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
+      setWinner("Winner : " + i);
+      setGameOver(true);
+      setCount(1);
+      setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
     }
     console.log(count);
   }
@@ -77,7 +77,7 @@ function App() {
           <div className="container">
             {Object.keys(moves).map((move, i) => {
               const val = String.fromCharCode(97 + i);
-              return <Box key={i+1} getClick={click} name={val} mark={moves[val]} />
+              return <Box key={i + 1} getClick={click} name={val} mark={moves[val]} />
             })}
           </div>
         </div>
