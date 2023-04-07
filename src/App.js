@@ -12,7 +12,7 @@ function App() {
 
   function click(id) {
 
-    const { a, b, c, d, e, f, g, h, i } = {...moves,[id]:toggle ? "O" : "X"};
+    const { a, b, c, d, e, f, g, h, i } = {...moves,[id]:(toggle ? "O" : "X")};
 
     if (moves[id] === "") {
 
@@ -30,42 +30,30 @@ function App() {
       });
 
       if(count>=9){
-        setWinner("Its a Draw");
+        setWinner("Its a Draw.");
         setGameOver(true);
         setCount(1);
         setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
       }
-
-
     }
 
-    console.log(moves, a, b, c,d,e,f,g,h,i);
-
-    if (((a === b) && (b === c)) || ((((a === d) && (d === g))) || ((a === e) && (e === i)))) {
-
-      if (a !== "") {
+    if ((a !== "") && (((a === b) && (b === c)) || (((a === d) && (d === g))))) {
         setWinner("Winner : " + a);
         setGameOver(true);
         setCount(1);
         setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
-      }
     }
-    else if (((d === e) && (e === f)) || (((b === e) && (e === h)) || ((c===e) && (c===g)))) {
-      if (e !== "") {
+    else if ((e !== "")&&((((d === e) && (e === f))  || ((a === e) && (e === i))) || (((b === e) && ( h === e)) || ((c===e) && (c===g))))) {
         setWinner("Winner : " + e);
         setGameOver(true);
         setCount(1);
         setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
-      }
-
     }
-    else if (((g === h) && (h === i)) || ((c === f) && (f === i))) {
-      if (i !== "") {
+    else if ((i !== "") && (((g === h) && (h === i)) || ((c === f) && (f === i)))) {
         setWinner("Winner : " + i);
         setGameOver(true);
         setCount(1);
         setMoves({ a: "", b: "", c: "", d: "", e: "", f: "", g: "", h: "", i: "" });
-      }
     }
     console.log(count);
   }
